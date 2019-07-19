@@ -15,7 +15,7 @@ with open('boxoffice.csv', 'r', encoding='utf-8') as f: #utf-8 : 한글, 중국�
         response = requests.get(api_url) # 브라우저에서 가장 아래 예시요청 엔터치는 것과 같음
         data = response.json()  # dict 사용 보기 편하게
         pprint(data)  # dict 순서대로 쪼개져 나옴
-movieCd = response['movieInfoResult']['movieInfo'][i]['movieCd']\n",
+# movieCd = response['movieInfoResult']['movieInfo'][i]['movieCd']\n",
 
 
 
@@ -29,13 +29,12 @@ movieCd = response['movieInfoResult']['movieInfo'][i]['movieCd']\n",
 # print('===================================================================================================================')
 # # pprint(data_list)
 
-# # dictionary는 중복이안된다. list.append(), dict.update() -> 자동적으로 최신값으로 넣어줌.
-# # if문을 쓰면 계속 값이 큰거로하도록 if문을 만들어야함. 그것을 안하기 위해서 날짜를 뒤집어서
+# dictionary는 중복이안된다. list.append(), dict.update() -> 자동적으로 최신값으로 넣어줌.
+# if문을 쓰면 계속 값이 큰거로하도록 if문을 만들어야함. 그것을 안하기 위해서 날짜를 뒤집어서
 
 # with open('movie.csv', 'w', newline='', encoding='utf-8') as f:
 #     # 저장할 필드의 이름을 미리 지정
-#     fieldnames = ('movieCd', 'movieNm', 'movieNmEn', '', '', '', '', '', 'repGenreNm', 'peopleNm')
-# # 대표코드, 영화명(국문), 영화명(영문), 영화명(원문), 관람등급, 개봉연도, 상영시간, 장르, 감독명
+#     fieldnames = ('movieCd', 'movieNm', 'movieNmEn', 'movieNmOg', 'watchGradeNm', 'openDt', 'showTm', 'genreNm', 'peopleNm')
 #     writer = csv.DictWriter(f, fieldnames=fieldnames)
 
 #     # 필드 이름을 csv 파일 최상단에 작성한다.
