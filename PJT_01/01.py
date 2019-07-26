@@ -5,13 +5,14 @@ from decouple import config
 import csv
 
 data_list = {}
-for a in range(3,0,-1):
+for a in range(50,0,-1):
     targetDt = datetime(2019, 7, 13) - timedelta(weeks=a)
     targetDt = targetDt.strftime('%Y%m%d') # yyyymmdd
+    print(targetDt)
 
     key = config('API_KEY')
     base_url = 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json'
-    api_url = f'{base_url}?key={key}&targetDt={targetDt}&weekGb=0&'
+    api_url = f'{base_url}?key={key}&targetDt={targetDt}&weekGb=0'
 
     response = requests.get(api_url) # 브라우저에서 가장 아래 예시요청 엔터치는 것과 같음
     data = response.json()  # 보기 편하게

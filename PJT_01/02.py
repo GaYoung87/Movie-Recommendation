@@ -8,10 +8,11 @@ key = config('API_KEY')
 
 import csv 
 with open('boxoffice.csv', 'r', encoding='utf-8') as f: #utf-8 : 한글, 중국어, 이모티콘을 해석하기 위함
-    items = csv.reader(f)
+    items = csv.DictReader(f)
     for item in items:
+        pri=item['movieCd']
         base_url = 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json'
-        api_url = f'{base_url}?key={key}&movieCd={item[0]}'
+        api_url = f'{base_url}?key={key}&movieCd={pri}'  # pri라는 변수 만들고 넣어줘야함.
         response = requests.get(api_url) # 브라우저에서 가장 아래 예시요청 엔터치는 것과 같음
         data = response.json()  # dict 사용 보기 편하게
         pprint(data)  # dict 순서대로 쪼개져 나옴
