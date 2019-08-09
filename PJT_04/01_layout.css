@@ -1,0 +1,44 @@
+body {
+  height: 3000px;
+}
+
+.navbar {
+  font-family: 'Gaegu', cursive;
+}
+
+header {
+  height: 350px;
+  width: 100%;
+  background-color: darkgray;
+  background-image: url(images/header.jpg);
+  background-size: cover;
+  text-align: center;
+  padding-top: 3.5px;
+}
+
+header > h2 {
+  position: relative;
+  top: 200px;
+  font-family: 'Schoolbell', cursive;
+}
+
+.footer {
+  height: 60px;
+  width: 100%;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  background-color: darkgrey;
+}
+
+#footername {
+  position: absolute;
+  font-family: 'Gaegu', cursive;
+  float: left;
+  padding-right: 10px;
+}
+
+#up {
+  position: relative;
+  float: right;
+  padding-right: 10px;
+}
