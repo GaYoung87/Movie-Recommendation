@@ -5,6 +5,6 @@
 {% block body %}
 <a class="ml-2" href="/movies/new/">새 영화 등록</a><hr>
 {% for movie in movies %}
-<p><a class="ml-2" href="/movies/{{ movies.pk}}/">{{ movies.title}}</a>: {{ movies.score}}</p>
+<p><a class="ml-2" href="/movies/{{ movie.pk }}/">{{ movie.title }}</a>: {{ movie.score }}</p>
 {% endfor %}
 {% endblock body %}
