@@ -8,5 +8,5 @@
 
 
 
-PJT_07:  https://github.com/gusk94/PJT/tree/master/PJT_06%26PJT_07 
+PJT_06~07:  https://github.com/gusk94/PJT/tree/master/PJT_06%26PJT_07 
 
