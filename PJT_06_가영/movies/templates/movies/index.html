@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Movies::Index{% endblock title %}
+
+{% block container %}
+
+<h2>Movie List</h2>
+
+<a href="{% url 'movies:create' %}">[생성하기]</a>
+<hr>
+
+{% for movie in movies %}
+<div>
+  <h3>{{ movie.pk }}. {{ movie.title }}</h3>
+  {% comment %} <a href="{% url 'movies:detail' movie.pk %}">[상세보기]</a> {% endcomment %}
+</div>
+<br>
+{% endfor %}
+
+{% endblock container %}
