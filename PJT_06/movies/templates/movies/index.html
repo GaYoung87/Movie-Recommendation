@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Movies::Index{% endblock title %}
+
+{% block container %}
+
+<h2>Movie List</h2>
+
+<img src="{% static 'movies/movie.jpg' %}" alt="movie">
+
+<a href="{% url 'movies:create' %}">[새 영화 등록]</a>
+<hr>
+
+{% for movie in movies %}
+  <ul>
+    <li>
+      <p>Title: <a href="{% url 'movies:detail' movie.pk %}">{{ movie.title }}</a></p>
+      <p>Score: {{ movie.score }}</p>
+    </li>
+  </ul>
+{% empty %}
+아무것도없다.
+{% endfor %}
+
+{% endblock container %}

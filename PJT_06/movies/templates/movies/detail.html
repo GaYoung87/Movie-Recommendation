@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Movies::Detail{% endblock title %}
+
+{% block container %}
+<h1>영화 정보 조회</h1>
+<br>
+
+<hr>
+<ul>
+  <li>Title : {{ movie.title }}</li>
+  <li>Title_en: {{ movie.title_en }}</li>
+  <li>Score : {{ movie.score }}</li>
+  <li>Audience : {{ movie.audience }}</li>
+  <li>Open Date : {{ movie.open_date }}</li>
+  <li>Genre : {{ movie.genre }}</li>
+  <li>Watch Grade : {{ movie.watch_grade }}</li>
+  <li>Poster : {{ movie.poster_url }}</li>
+  <li>Description : {{movie.description }}</li>
+</ul>
+
+<form action="{% url 'movies:index' %}">
+{% csrf_token %}
+<button type="submit">[목록]</button>
+</form>
+
+<form action="{% url 'movies:update' movie.pk %}">
+{% csrf_token %}
+<button type="submit">[수정]</button>
+</form>
+
+<form action="{% url 'movies:delete' movie.pk %}">
+{% csrf_token %}
+<button type="submit">[삭제]</button>
+</form>
+<br>
+<hr>
+<br>
+
+  <form action="{% url 'movies:reviews' movie.pk %}" method="post">
+    {% csrf_token %}
+    {{ comment_form.as_p }}
+    <button type="submit">[한줄평 생성]</button>
+  </form>
+
+{% for comment in comments %}
+<ul>
+  <li>
+    <p>{{ comment.content }} - {{ comment.score }}</p>
+  </li>
+</ul>
+{% endfor %}
+{% endblock container %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Movies::Create{% endblock title %}
+
+{% block container %}
+
+<h1>영화 정보 생성 Form</h1>
+
+<form action=""></form>
+<form method='POST'>
+{% csrf_token %}
+{{ form.as_p }}
+</form>
+
+<form action="{% url 'movies:index' %}">
+  {% csrf_token %}
+  <button type="submit">[Form Submit]</button>
+</form>
+
+
+{% endblock container %}
