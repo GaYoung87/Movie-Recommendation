@@ -269,3 +269,31 @@ def review_update_delete(request, review_pk):
     return Response({"message": "삭제되었습니다."})
 ```
 
+****
+
+**GET/api/v1/genres/**
+
+![image-20191101172705040](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20191101172705040.png)
+
+**GET/api/v1/genres/{genre_pk}/**
+
+![image-20191101172858988](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20191101172858988.png)
+
+**GET/api/v1/movies/**
+
+![image-20191101172927734](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20191101172927734.png)
+
+**GET/api/v1/genres/{movie_pk}/**
+
+![image-20191101173034512](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20191101173034512.png)
+
+**POST/api/v1/movies/{movie_pk}/reviews/**
+
+![image-20191101173052014](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20191101173052014.png)
+
+**PUT/api/v1/reviews/{review_pk}/**
+
+**DELETE/api/v1/reviews/{review_pk}/**
+
+![image-20191101173153714](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20191101173153714.png)
+
